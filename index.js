@@ -22,6 +22,7 @@ app.get('/api/pets', async (req, res, next) => {
     const SQL = `
     SELECT *
     FROM pets
+    ORDER BY name
     `;
     const response = await client.query(SQL);
     res.send(response.rows)
